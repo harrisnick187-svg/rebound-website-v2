@@ -1,1456 +1,2196 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Rebound Advanced Physiotherapy Clinic | Felpham, Bognor Regis</title>
-
-  <meta name="description"
-        content="Specialist musculoskeletal physiotherapy in Felpham, Bognor Regis. Advanced assessment, diagnosis, hands-on treatment and rehabilitation.">
-
-  <style>
-    :root{
-      --navy:#18374c;
-      --navy-dark:#0e2738;
-      --blue-soft:#e9f0f2;
-      --cream:#f6f4ef;
-      --paper:#fbfbf9;
-      --ink:#26343b;
-      --muted:#68767d;
-      --line:#dbe2e4;
-      --white:#ffffff;
-      --radius:20px;
-    }
-
-    *{box-sizing:border-box}
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-      color:var(--ink);
-      background:var(--white);
-      line-height:1.62;
-    }
-
-    img{
-      max-width:100%;
-    }
-
-    a{
-      color:inherit;
-    }
-
-    .wrap{
-      width:min(1160px,92%);
-      margin:auto;
-    }
-
-    /* HEADER */
-
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background:rgba(255,255,255,.96);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--line);
-    }
-
-    .nav{
-      min-height:82px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:22px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:13px;
-      min-width:0;
-    }
-
-    .logo-mark{
-      width:70px;
-      height:58px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-    }
-
-    .logo-mark img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-    }
-
-    .brand-copy{
-      line-height:1.25;
-    }
-
-    .brand-name{
-      font-weight:800;
-      color:var(--navy-dark);
-      letter-spacing:-.01em;
-    }
-
-    .tagline{
-      margin-top:3px;
-      color:var(--muted);
-      font-size:.82rem;
-    }
-
-    nav{
-      display:flex;
-      align-items:center;
-      gap:18px;
-    }
-
-    nav a{
-      text-decoration:none;
-      color:var(--muted);
-      font-size:.93rem;
-    }
-
-    nav a:hover{
-      color:var(--navy);
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      text-decoration:none;
-      padding:12px 19px;
-      border-radius:999px;
-      background:var(--navy);
-      color:white;
-      font-weight:700;
-      border:1px solid var(--navy);
-      transition:.2s ease;
-    }
-
-    .btn:hover{
-      background:var(--navy-dark);
-      border-color:var(--navy-dark);
-    }
-
-    .btn.light{
-      color:var(--navy);
-      background:white;
-      border-color:#b8c7cd;
-    }
-
-    /* HERO */
-
-    .hero{
-      padding:68px 0 76px;
-      background:
-        radial-gradient(circle at 85% 15%, #e8eef0 0, transparent 29%),
-        linear-gradient(145deg,#fbfbf9 0%,#f5f3ee 100%);
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:58px;
-      align-items:center;
-    }
-
-    .kicker{
-      display:inline-block;
-      color:var(--navy);
-      font-size:.76rem;
-      font-weight:800;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      margin-bottom:16px;
-    }
-
-    h1{
-      margin:0 0 20px;
-      color:var(--navy-dark);
-      font-size:clamp(2.7rem,5vw,5rem);
-      line-height:1.02;
-      letter-spacing:-.05em;
-    }
-
-    h2{
-      margin:0 0 16px;
-      color:var(--navy-dark);
-      font-size:clamp(1.9rem,3vw,2.8rem);
-      line-height:1.14;
-      letter-spacing:-.035em;
-    }
-
-    h3{
-      margin:0 0 8px;
-      color:var(--navy-dark);
-      font-size:1.08rem;
-    }
-
-    .lead{
-      max-width:700px;
-      margin:0;
-      color:var(--muted);
-      font-size:1.18rem;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:28px;
-    }
-
-    .hero-meta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:28px;
-    }
-
-    .pill{
-      padding:8px 12px;
-      background:white;
-      border:1px solid var(--line);
-      border-radius:999px;
-      color:var(--muted);
-      font-size:.9rem;
-    }
-
-    .hero-image{
-      position:relative;
-      min-height:510px;
-      overflow:hidden;
-      border-radius:28px;
-      box-shadow:0 24px 60px rgba(14,39,56,.12);
-    }
-
-    .hero-image img{
-      width:100%;
-      height:510px;
-      object-fit:cover;
-      display:block;
-    }
-
-    .hero-overlay{
-      position:absolute;
-      left:20px;
-      right:20px;
-      bottom:20px;
-      padding:18px 20px;
-      border-radius:16px;
-      color:white;
-      background:rgba(14,39,56,.84);
-      backdrop-filter:blur(8px);
-    }
-
-    .hero-overlay strong{
-      display:block;
-      font-size:1.1rem;
-    }
-
-    .hero-overlay span{
-      font-size:.92rem;
-      color:#dce7eb;
-    }
-
-    /* COMMON */
-
-    section{
-      padding:78px 0;
-    }
-
-    .soft{
-      background:var(--paper);
-    }
-
-    .navy-section{
-      background:var(--navy-dark);
-      color:white;
-    }
-
-    .navy-section h2,
-    .navy-section h3{
-      color:white;
-    }
-
-    .section-intro{
-      max-width:820px;
-      color:var(--muted);
-      margin-bottom:36px;
-    }
-
-    .navy-section .section-intro{
-      color:#c7d3d8;
-    }
-
-    /* QUICK INFO */
-
-    .quick-info{
-      margin-top:-34px;
-      position:relative;
-      z-index:5;
-    }
-
-    .quick-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-    }
-
-    .quick-card{
-      background:white;
-      padding:22px 24px;
-      border:1px solid var(--line);
-      border-radius:18px;
-      box-shadow:0 12px 30px rgba(15,38,55,.07);
-    }
-
-    .quick-card small{
-      display:block;
-      color:var(--muted);
-      margin-bottom:5px;
-    }
-
-    .quick-card strong{
-      color:var(--navy-dark);
-    }
-
-    .independence{
-      margin-top:16px;
-      color:var(--muted);
-      font-size:.9rem;
-    }
-
-    /* ACTIVITY IMAGES */
-
-    .activity-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:15px;
-      margin:34px 0 40px;
-    }
-
-    .activity{
-      position:relative;
-      height:245px;
-      overflow:hidden;
-      border-radius:18px;
-    }
-
-    .activity img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      transition:transform .35s ease;
-    }
-
-    .activity:hover img{
-      transform:scale(1.035);
-    }
-
-    .activity-label{
-      position:absolute;
-      inset:auto 0 0 0;
-      padding:14px;
-      color:white;
-      font-weight:700;
-      background:linear-gradient(transparent,rgba(10,29,42,.88));
-    }
-
-    /* CONDITIONS */
-
-    .conditions-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:17px;
-    }
-
-    .condition{
-      padding:24px;
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:white;
-    }
-
-    .condition h3{
-      padding-bottom:10px;
-      border-bottom:1px solid var(--line);
-    }
-
-    .condition ul{
-      padding-left:18px;
-      margin:13px 0 0;
-      color:var(--muted);
-    }
-
-    .condition li{
-      margin:5px 0;
-    }
-
-    /* TREATMENT */
-
-    .treatment-grid{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:52px;
-      align-items:center;
-    }
-
-    .treatment-photo{
-      overflow:hidden;
-      border-radius:24px;
-    }
-
-    .treatment-photo img{
-      width:100%;
-      height:470px;
-      object-fit:cover;
-      display:block;
-    }
-
-    .treatment-copy p{
-      color:var(--muted);
-    }
-
-    .feature-row{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:12px;
-      margin-top:24px;
-    }
-
-    .feature{
-      padding:15px;
-      border-radius:14px;
-      background:var(--blue-soft);
-      color:var(--navy-dark);
-      font-weight:650;
-    }
-
-    /* ABOUT */
-
-    .two{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:52px;
-      align-items:start;
-    }
-
-    .check-list{
-      list-style:none;
-      margin:18px 0 0;
-      padding:0;
-    }
-
-    .check-list li{
-      position:relative;
-      padding:11px 0 11px 30px;
-      border-bottom:1px solid var(--line);
-    }
-
-    .check-list li:before{
-      content:"✓";
-      position:absolute;
-      left:0;
-      color:var(--navy);
-      font-weight:800;
-    }
-
-    /* ABOUT ME */
-
-    .qualifications{
-      padding:24px;
-      background:white;
-      border:1px solid var(--line);
-      border-radius:18px;
-    }
-
-    .qualification{
-      padding:11px 0;
-      border-bottom:1px solid var(--line);
-    }
-
-    .qualification:last-child{
-      border-bottom:0;
-    }
-
-    .about-copy p{
-      color:var(--muted);
-    }
-
-    /* FEES */
-
-    .fee-card{
-      max-width:820px;
-      margin:auto;
-      padding:34px;
-      border-radius:24px;
-      background:white;
-      border:1px solid var(--line);
-      box-shadow:0 16px 40px rgba(15,38,55,.07);
-    }
-
-    .fee-top{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:24px;
-      padding-bottom:22px;
-      border-bottom:1px solid var(--line);
-    }
-
-    .fee-name{
-      font-size:1.3rem;
-      font-weight:800;
-      color:var(--navy-dark);
-    }
-
-    .fee-price{
-      color:var(--navy);
-      font-size:2.5rem;
-      font-weight:850;
-    }
-
-    .fee-card p{
-      color:var(--muted);
-    }
-
-    /* LOCATION */
-
-    .location-card{
-      padding:30px;
-      border-radius:22px;
-      background:var(--cream);
-      border:1px solid var(--line);
-    }
-
-    .contact-card{
-      padding:30px;
-      border-radius:22px;
-      background:var(--navy-dark);
-      color:white;
-    }
-
-    .contact-card h3{
-      color:white;
-    }
-
-    .contact-card a{
-      color:white;
-    }
-
-    .contact-card p{
-      color:#d9e3e7;
-    }
-
-    .map-link{
-      display:inline-block;
-      margin-top:12px;
-      font-weight:750;
-      color:var(--navy);
-    }
-
-    /* GOVERNANCE */
-
-    .governance-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
-    }
-
-    .governance-box{
-      padding:26px;
-      background:white;
-      border:1px solid var(--line);
-      border-radius:18px;
-    }
-
-    .governance-box p{
-      color:var(--muted);
-    }
-
-    /* FOOTER */
-
-    footer{
-      padding:40px 0;
-      background:#091d2b;
-      color:white;
-    }
-
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:28px;
-      align-items:end;
-    }
-
-    .footer-muted{
-      color:#aebec6;
-      font-size:.9rem;
-    }
-
-    .footer-links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:16px;
-      margin-top:14px;
-    }
-
-    .footer-links a{
-      color:#dce7eb;
-    }
-
-    /* MOBILE */
-
-    @media(max-width:950px){
-      nav a:not(.btn){
-        display:none;
-      }
-
-      .conditions-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .activity-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-    }
-
-    @media(max-width:760px){
-      .hero-grid,
-      .treatment-grid,
-      .two,
-      .governance-grid,
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero-image,
-      .hero-image img{
-        height:370px;
-        min-height:370px;
-      }
-
-      .quick-grid,
-      .conditions-grid{
-        grid-template-columns:1fr;
-      }
-
-      .feature-row{
-        grid-template-columns:1fr;
-      }
-
-      .fee-top{
-        display:block;
-      }
-
-      .fee-price{
-        margin-top:8px;
-      }
-
-      section{
-        padding:62px 0;
-      }
-    }
-
-    @media(max-width:520px){
-      .activity-grid{
-        grid-template-columns:1fr;
-      }
-
-      .activity{
-        height:250px;
-      }
-
-      .brand-name{
-        font-size:.88rem;
-      }
-
-      .tagline{
-        font-size:.74rem;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Rebound Advanced Physiotherapy Clinic | Felpham, Bognor Regis</title>
+
+<meta name="description"
+content="Specialist musculoskeletal physiotherapy in Felpham, Bognor Regis. Advanced assessment, clear clinical diagnosis, hands-on treatment and rehabilitation.">
+
+<style>
+
+:root{
+--navy:#17364a;
+--dark:#0d2738;
+--blue:#eaf1f3;
+--cream:#f4f2ed;
+--paper:#fafaf8;
+--ink:#26343b;
+--muted:#68777e;
+--line:#dbe2e4;
+--white:#ffffff;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+margin:0;
+font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+color:var(--ink);
+background:#fff;
+line-height:1.62;
+}
+
+a{color:inherit}
+
+img{
+display:block;
+max-width:100%;
+}
+
+.wrap{
+width:min(1160px,92%);
+margin:auto;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:50;
+background:rgba(255,255,255,.96);
+backdrop-filter:blur(12px);
+border-bottom:1px solid var(--line);
+}
+
+.nav{
+min-height:82px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:22px;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo{
+width:67px;
+height:55px;
+}
+
+.logo svg{
+width:100%;
+height:100%;
+}
+
+.brand-name{
+font-weight:800;
+color:var(--dark);
+letter-spacing:-.015em;
+line-height:1.2;
+}
+
+.tagline{
+display:block;
+margin-top:3px;
+font-size:.8rem;
+font-weight:500;
+color:var(--muted);
+}
+
+nav{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+nav a{
+font-size:.92rem;
+text-decoration:none;
+color:var(--muted);
+}
+
+nav a:hover{
+color:var(--navy);
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:12px 19px;
+border-radius:999px;
+background:var(--navy);
+border:1px solid var(--navy);
+color:white;
+font-weight:750;
+text-decoration:none;
+}
+
+.btn:hover{
+background:var(--dark);
+}
+
+.btn.light{
+background:white;
+color:var(--navy);
+border-color:#b9c8cd;
+}
+
+/* TYPOGRAPHY */
+
+.kicker{
+display:block;
+margin-bottom:14px;
+color:var(--navy);
+font-size:.75rem;
+font-weight:800;
+letter-spacing:.14em;
+text-transform:uppercase;
+}
+
+h1{
+margin:0 0 20px;
+font-size:clamp(2.7rem,5vw,5rem);
+line-height:1.02;
+letter-spacing:-.055em;
+color:var(--dark);
+}
+
+h2{
+margin:0 0 16px;
+font-size:clamp(1.9rem,3vw,2.75rem);
+line-height:1.14;
+letter-spacing:-.035em;
+color:var(--dark);
+}
+
+h3{
+margin:0 0 9px;
+color:var(--dark);
+}
+
+.lead{
+max-width:720px;
+font-size:1.19rem;
+color:var(--muted);
+}
+
+.muted{
+color:var(--muted);
+}
+
+.small{
+font-size:.9rem;
+color:var(--muted);
+}
+
+/* HERO */
+
+.hero{
+padding:72px 0 82px;
+background:
+radial-gradient(circle at 85% 15%,#e8eef0 0,transparent 29%),
+linear-gradient(145deg,#fbfbf9,#f4f2ed);
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.05fr .95fr;
+gap:55px;
+align-items:center;
+}
+
+.hero-actions{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:28px;
+}
+
+.pills{
+display:flex;
+flex-wrap:wrap;
+gap:9px;
+margin-top:27px;
+}
+
+.pill{
+padding:8px 12px;
+background:white;
+border:1px solid var(--line);
+border-radius:999px;
+font-size:.89rem;
+color:var(--muted);
+}
+
+.hero-image{
+position:relative;
+height:500px;
+overflow:hidden;
+border-radius:28px;
+box-shadow:0 22px 55px rgba(15,38,55,.13);
+}
+
+.hero-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center;
+}
+
+.hero-caption{
+position:absolute;
+left:20px;
+right:20px;
+bottom:20px;
+padding:17px 19px;
+border-radius:15px;
+background:rgba(13,39,56,.84);
+color:white;
+}
+
+.hero-caption strong{
+display:block;
+font-size:1.08rem;
+}
+
+.hero-caption span{
+font-size:.91rem;
+color:#dce6ea;
+}
+
+/* QUICK INFO */
+
+.quick{
+position:relative;
+z-index:10;
+margin-top:-36px;
+}
+
+.quick-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+}
+
+.quick-card{
+padding:22px 24px;
+background:white;
+border:1px solid var(--line);
+border-radius:18px;
+box-shadow:0 12px 30px rgba(15,38,55,.07);
+}
+
+.quick-card small{
+display:block;
+margin-bottom:4px;
+color:var(--muted);
+}
+
+.independence{
+margin-top:15px;
+font-size:.9rem;
+color:var(--muted);
+}
+
+/* SECTIONS */
+
+section{
+padding:78px 0;
+}
+
+.soft{
+background:var(--paper);
+}
+
+.section-intro{
+max-width:820px;
+margin-bottom:35px;
+color:var(--muted);
+}
+
+/* ACTIVITY IMAGES */
+
+.activity-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin:34px 0 42px;
+}
+
+.activity{
+position:relative;
+height:235px;
+overflow:hidden;
+border-radius:18px;
+background:var(--blue);
+}
+
+.activity img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform .3s ease;
+}
+
+.activity:hover img{
+transform:scale(1.03);
+}
+
+.activity-label{
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+padding:15px;
+font-weight:700;
+color:white;
+background:
+linear-gradient(transparent,rgba(8,27,40,.9));
+}
+
+/* CONDITIONS */
+
+.conditions{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:17px;
+}
+
+.condition{
+padding:23px;
+background:white;
+border:1px solid var(--line);
+border-radius:18px;
+}
+
+.condition h3{
+padding-bottom:10px;
+border-bottom:1px solid var(--line);
+}
+
+.condition ul{
+margin:13px 0 0;
+padding-left:18px;
+color:var(--muted);
+}
+
+.condition li{
+margin:5px 0;
+}
+
+/* TREATMENT */
+
+.treatment-grid{
+display:grid;
+grid-template-columns:.9fr 1.1fr;
+gap:50px;
+align-items:center;
+}
+
+.treatment-image{
+height:430px;
+overflow:hidden;
+border-radius:24px;
+background:#dde5e7;
+}
+
+/*
+This image is deliberately heavily cropped to emphasise
+hands-on treatment rather than another clinician's identity.
+*/
+
+.treatment-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center 72%;
+}
+
+.features{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:11px;
+margin-top:23px;
+}
+
+.feature{
+padding:14px 15px;
+background:var(--blue);
+border-radius:13px;
+color:var(--dark);
+font-weight:650;
+}
+
+/* ABOUT */
+
+.two{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:start;
+}
+
+.check-list{
+list-style:none;
+padding:0;
+margin:18px 0 0;
+}
+
+.check-list li{
+position:relative;
+padding:11px 0 11px 29px;
+border-bottom:1px solid var(--line);
+}
+
+.check-list li:before{
+content:"✓";
+position:absolute;
+left:0;
+font-weight:800;
+color:var(--navy);
+}
+
+/* ABOUT ME */
+
+.qualifications{
+padding:24px;
+background:white;
+border:1px solid var(--line);
+border-radius:18px;
+}
+
+.qualification{
+padding:11px 0;
+border-bottom:1px solid var(--line);
+}
+
+.qualification:last-child{
+border-bottom:0;
+}
+
+.about-copy p{
+color:var(--muted);
+}
+
+/* FEES */
+
+.fee-card{
+max-width:820px;
+margin:28px auto 0;
+padding:32px;
+background:white;
+border:1px solid var(--line);
+border-radius:23px;
+box-shadow:0 15px 38px rgba(15,38,55,.07);
+}
+
+.fee-top{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:24px;
+padding-bottom:20px;
+border-bottom:1px solid var(--line);
+}
+
+.fee-title{
+font-size:1.3rem;
+font-weight:800;
+color:var(--dark);
+}
+
+.price{
+font-size:2.5rem;
+font-weight:850;
+color:var(--navy);
+}
+
+/* LOCATION */
+
+.location-card{
+padding:30px;
+background:var(--cream);
+border:1px solid var(--line);
+border-radius:22px;
+}
+
+.contact-card{
+padding:30px;
+background:var(--dark);
+border-radius:22px;
+color:white;
+}
+
+.contact-card h3{
+color:white;
+}
+
+.contact-card p{
+color:#dbe4e8;
+}
+
+.contact-card a{
+color:white;
+}
+
+.map-link{
+display:inline-block;
+margin-top:10px;
+font-weight:750;
+color:var(--navy);
+}
+
+/* PRIVACY */
+
+.governance{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.governance-card{
+padding:25px;
+background:white;
+border:1px solid var(--line);
+border-radius:18px;
+}
+
+.governance-card p{
+color:var(--muted);
+}
+
+/* FOOTER */
+
+footer{
+padding:40px 0;
+background:#091d2b;
+color:white;
+}
+
+.footer{
+display:flex;
+justify-content:space-between;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.footer-muted{
+font-size:.9rem;
+color:#aec0c7;
+}
+
+.footer-links{
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+margin:13px 0;
+}
+
+.footer-links a{
+color:#dce7ea;
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+nav a:not(.btn){
+display:none;
+}
+
+.conditions{
+grid-template-columns:repeat(2,1fr);
+}
+
+.activity-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:760px){
+
+.hero-grid,
+.treatment-grid,
+.two,
+.governance{
+grid-template-columns:1fr;
+}
+
+.quick-grid,
+.conditions{
+grid-template-columns:1fr;
+}
+
+.hero-image{
+height:360px;
+}
+
+.features{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:520px){
+
+.activity-grid{
+grid-template-columns:1fr;
+}
+
+.fee-top{
+display:block;
+}
+
+.price{
+margin-top:8px;
+}
+
+.brand-name{
+font-size:.88rem;
+}
+
+}
+
+</style>
 </head>
+
 
 <body>
 
 <header>
-  <div class="wrap nav">
 
-    <div class="brand">
-      <div class="logo-mark">
-        <svg viewBox="0 0 180 120" width="70" height="58" aria-label="Rebound running logo">
-          <g fill="none" stroke="#18374c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M80 26c12-6 21-4 29 3"/>
-            <path d="M72 42c20 0 35 7 50 20"/>
-            <path d="M64 49c-15 3-28 9-42 21"/>
-            <path d="M82 51c-5 15-12 28-25 39"/>
-            <path d="M91 59c18 10 31 23 45 38"/>
-            <path d="M65 78c-14 5-26 13-38 25"/>
-            <path d="M110 67c15 1 30 7 44 17"/>
-            <path d="M53 37c-14 1-27 5-41 13"/>
-          </g>
-        </svg>
-      </div>
+<div class="wrap nav">
 
-      <div class="brand-copy">
-        <div class="brand-name">Rebound Advanced Physiotherapy Clinic</div>
-        <div class="tagline">Helping you move with confidence</div>
-      </div>
-    </div>
+<div class="brand">
 
-    <nav>
-      <a href="#conditions">Conditions</a>
-      <a href="#treatment">Treatment</a>
-      <a href="#about-me">About me</a>
-      <a href="#fees">Fees</a>
-      <a href="#location">Location</a>
-      <a class="btn" href="tel:07593929738">Call</a>
-    </nav>
+<div class="logo">
 
-  </div>
+<svg viewBox="0 0 180 120"
+aria-label="Rebound running logo">
+
+<g
+fill="none"
+stroke="#17364a"
+stroke-width="8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="M80 26c12-6 21-4 29 3"/>
+<path d="M72 42c20 0 35 7 50 20"/>
+<path d="M64 49c-15 3-28 9-42 21"/>
+<path d="M82 51c-5 15-12 28-25 39"/>
+<path d="M91 59c18 10 31 23 45 38"/>
+<path d="M65 78c-14 5-26 13-38 25"/>
+<path d="M110 67c15 1 30 7 44 17"/>
+
+</g>
+
+</svg>
+
+</div>
+
+<div class="brand-name">
+
+Rebound Advanced Physiotherapy Clinic
+
+<span class="tagline">
+Helping you move with confidence
+</span>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a href="#conditions">Conditions</a>
+<a href="#treatment">Treatment</a>
+<a href="#about-me">About me</a>
+<a href="#fees">Fees</a>
+<a href="#location">Location</a>
+
+<a class="btn"
+href="tel:07593929738">
+Call
+</a>
+
+</nav>
+
+</div>
+
 </header>
 
 
 <main>
 
+
+<!-- HERO -->
+
 <section class="hero">
-  <div class="wrap hero-grid">
 
-    <div>
-      <span class="kicker">Specialist Musculoskeletal Physiotherapy • Felpham</span>
+<div class="wrap hero-grid">
 
-      <h1>
-        Helping you move with confidence.
-      </h1>
+<div>
 
-      <p class="lead">
-        Experienced assessment, diagnosis and treatment for musculoskeletal
-        problems — from recent injuries to persistent or complex pain.
-      </p>
+<span class="kicker">
+Specialist Musculoskeletal Physiotherapy • Felpham
+</span>
 
-      <div class="hero-actions">
-        <a class="btn" href="tel:07593929738">
-          Call to arrange an appointment
-        </a>
+<h1>
+Helping you move with confidence.
+</h1>
 
-        <a class="btn light"
-           href="mailto:reboundadvancedphysio@outlook.com">
-          Email Rebound
-        </a>
-      </div>
+<p class="lead">
 
-      <div class="hero-meta">
-        <span class="pill">Advanced MSK Physiotherapy</span>
-        <span class="pill">Hands-on assessment</span>
-        <span class="pill">£60 per session</span>
-      </div>
-    </div>
+Experienced assessment, clear clinical diagnosis and treatment for
+musculoskeletal problems — from recent injuries to persistent or
+complex pain.
 
-    <div class="hero-image">
-      <img
-        src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1200&q=88"
-        alt="Person returning to running and physical activity">
+</p>
 
-      <div class="hero-overlay">
-        <strong>Return to what matters.</strong>
-        <span>Work. Walking. Sport. Fitness. Everyday life.</span>
-      </div>
-    </div>
+<div class="hero-actions">
 
-  </div>
-</section>
+<a class="btn"
+href="tel:07593929738">
 
+Call to arrange an appointment
 
-<div class="quick-info">
-  <div class="wrap">
+</a>
 
-    <div class="quick-grid">
+<a class="btn light"
+href="mailto:reboundadvancedphysio@outlook.com">
 
-      <div class="quick-card">
-        <small>Clinic</small>
-        <strong>Flansham Park GP Practice, Felpham</strong>
-      </div>
+Email Rebound
 
-      <div class="quick-card">
-        <small>Telephone</small>
-        <strong>
-          <a href="tel:07593929738">07593 929738</a>
-        </strong>
-      </div>
+</a>
 
-      <div class="quick-card">
-        <small>Email</small>
-        <strong>
-          <a href="mailto:reboundadvancedphysio@outlook.com">
-            reboundadvancedphysio@outlook.com
-          </a>
-        </strong>
-      </div>
-
-    </div>
-
-    <p class="independence">
-      Rebound Advanced Physiotherapy Clinic is an independent private enterprise
-      operating from consulting rooms upstairs at Flansham Park GP Practice.
-      It is separate from, and has no affiliation with, the GP practice or its
-      NHS services.
-    </p>
-
-  </div>
 </div>
 
 
+<div class="pills">
+
+<span class="pill">
+Advanced MSK Physiotherapy
+</span>
+
+<span class="pill">
+Hands-on assessment
+</span>
+
+<span class="pill">
+£60 per session
+</span>
+
+</div>
+
+</div>
+
+
+<div class="hero-image">
+
+<img
+src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1200&q=85"
+alt="Person returning confidently to running and activity">
+
+<div class="hero-caption">
+
+<strong>
+Return to what matters.
+</strong>
+
+<span>
+Work • Walking • Sport • Fitness • Everyday life
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUICK INFORMATION -->
+
+<div class="quick">
+
+<div class="wrap">
+
+<div class="quick-grid">
+
+
+<div class="quick-card">
+
+<small>Clinic</small>
+
+<strong>
+Flansham Park GP Practice, Felpham
+</strong>
+
+</div>
+
+
+<div class="quick-card">
+
+<small>Telephone</small>
+
+<strong>
+
+<a href="tel:07593929738">
+
+07593 929738
+
+</a>
+
+</strong>
+
+</div>
+
+
+<div class="quick-card">
+
+<small>Email</small>
+
+<strong>
+
+<a href="mailto:reboundadvancedphysio@outlook.com">
+
+reboundadvancedphysio@outlook.com
+
+</a>
+
+</strong>
+
+</div>
+
+</div>
+
+
+<p class="independence">
+
+Rebound Advanced Physiotherapy Clinic is an
+<strong>independent private enterprise</strong>
+operating from consulting rooms upstairs at
+Flansham Park GP Practice.
+
+It is separate from, and has no affiliation with,
+the GP practice or its NHS services.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CONDITIONS -->
+
 <section id="conditions">
-  <div class="wrap">
 
-    <span class="kicker">Conditions treated</span>
+<div class="wrap">
 
-    <h2>
-      Specialist care for a broad range of musculoskeletal problems.
-    </h2>
+<span class="kicker">
+Conditions treated
+</span>
 
-    <p class="section-intro">
-      You do not need to know your diagnosis before attending. Assessment is
-      designed to understand the problem, identify the most likely diagnosis and
-      agree the most appropriate treatment or next step.
-    </p>
-
-    <div class="activity-grid">
-
-      <div class="activity">
-        <img
-          src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=900&q=85"
-          alt="Walking and outdoor activity">
-        <div class="activity-label">Walking & everyday activity</div>
-      </div>
-
-      <div class="activity">
-        <img
-          src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=900&q=85"
-          alt="Golf and return to sport">
-        <div class="activity-label">Golf & sport</div>
-      </div>
-
-      <div class="activity">
-        <img
-          src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=85"
-          alt="Strength training">
-        <div class="activity-label">Strength & confidence</div>
-      </div>
-
-      <div class="activity">
-        <img
-          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"
-          alt="Returning to normal activities">
-        <div class="activity-label">Doing what matters to you</div>
-      </div>
-
-    </div>
+<h2>
+Specialist care for a broad range of musculoskeletal problems.
+</h2>
 
 
-    <div class="conditions-grid">
+<p class="section-intro">
 
-      <div class="condition">
-        <h3>Back, pelvis & sciatica</h3>
-        <ul>
-          <li>Acute and persistent low back pain</li>
-          <li>Sciatica and lumbar nerve-root irritation / impingement</li>
-          <li>Disc-related back and leg pain</li>
-          <li>Lumbar spondylosis and degenerative change</li>
-          <li>Facet-joint related pain and stiffness</li>
-          <li>Sacroiliac and pelvic-region pain</li>
-          <li>Spinal stenosis and activity-related leg symptoms</li>
-        </ul>
-      </div>
+You do not need to know your diagnosis before attending.
+
+Assessment is designed to understand the problem,
+<strong>
+establish a clear clinical diagnosis while explaining any uncertainty
+where appropriate
+</strong>,
+and agree the most appropriate treatment or next step.
+
+</p>
 
 
-      <div class="condition">
-        <h3>Neck, upper back & nerve pain</h3>
-        <ul>
-          <li>Neck pain and cervical spondylosis</li>
-          <li>Neck and arm pain</li>
-          <li>Cervical nerve-root irritation / impingement</li>
-          <li>Disc-related neck and arm symptoms</li>
-          <li>Upper-back and thoracic pain</li>
-          <li>Persistent neck stiffness</li>
-          <li>Recurrent neck pain</li>
-        </ul>
-      </div>
+<div class="activity-grid">
 
 
-      <div class="condition">
-        <h3>Shoulder</h3>
-        <ul>
-          <li>Rotator cuff related shoulder pain</li>
-          <li>Rotator cuff tendinopathy</li>
-          <li>Partial rotator cuff tears</li>
-          <li>Frozen shoulder / adhesive capsulitis</li>
-          <li>Subacromial pain and bursitis</li>
-          <li>Shoulder instability and recurrent subluxation</li>
-          <li>AC joint and glenohumeral osteoarthritis</li>
-          <li>Sports and traumatic shoulder injuries</li>
-        </ul>
-      </div>
+<div class="activity">
+
+<img
+src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80"
+alt="Walking and everyday activity">
+
+<div class="activity-label">
+Walking & everyday activity
+</div>
+
+</div>
 
 
-      <div class="condition">
-        <h3>Elbow, wrist & hand</h3>
-        <ul>
-          <li>Tennis elbow / lateral elbow tendinopathy</li>
-          <li>Golfer's elbow / medial elbow tendinopathy</li>
-          <li>Cubital tunnel / ulnar nerve irritation</li>
-          <li>Carpal tunnel and nerve-related hand symptoms</li>
-          <li>Wrist sprain, instability and overuse pain</li>
-          <li>Thumb and hand osteoarthritis</li>
-          <li>Tendon and soft-tissue injuries</li>
-        </ul>
-      </div>
+<div class="activity">
+
+<img
+src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80"
+alt="Playing golf and returning to sport">
+
+<div class="activity-label">
+Golf & sport
+</div>
+
+</div>
 
 
-      <div class="condition">
-        <h3>Hip & groin</h3>
-        <ul>
-          <li>Hip osteoarthritis and stiffness</li>
-          <li>Greater trochanteric pain syndrome</li>
-          <li>Gluteal tendinopathy</li>
-          <li>Hip impingement / FAI-related symptoms</li>
-          <li>Groin and adductor-related pain</li>
-          <li>Proximal hamstring tendinopathy</li>
-          <li>Sport-related hip pain</li>
-        </ul>
-      </div>
+<div class="activity">
+
+<img
+src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80"
+alt="Strength and exercise">
+
+<div class="activity-label">
+Strength & confidence
+</div>
+
+</div>
 
 
-      <div class="condition">
-        <h3>Knee</h3>
-        <ul>
-          <li>Knee osteoarthritis</li>
-          <li>Patellofemoral / anterior knee pain</li>
-          <li>Patellar and quadriceps tendinopathy</li>
-          <li>Degenerative meniscal symptoms</li>
-          <li>Ligament sprains and rehabilitation</li>
-          <li>Post-operative knee rehabilitation</li>
-          <li>Running and sport-related knee pain</li>
-        </ul>
-      </div>
+<div class="activity">
+
+<img
+src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
+alt="Returning to normal everyday activities">
+
+<div class="activity-label">
+Doing what matters to you
+</div>
+
+</div>
+
+</div>
 
 
-      <div class="condition">
-        <h3>Foot & ankle</h3>
-        <ul>
-          <li>Achilles tendinopathy</li>
-          <li>Plantar heel pain / plantar fasciopathy</li>
-          <li>Ankle sprains and instability</li>
-          <li>Calf and lower-leg muscle injuries</li>
-          <li>Peroneal and other tendon problems</li>
-          <li>Foot and ankle osteoarthritis</li>
-          <li>Return-to-running rehabilitation</li>
-        </ul>
-      </div>
+<div class="conditions">
 
 
-      <div class="condition">
-        <h3>Tendons, muscles & sports injuries</h3>
-        <ul>
-          <li>Tendinopathy and tendon overload</li>
-          <li>Muscle strains and tears</li>
-          <li>Ligament sprains</li>
-          <li>Overuse and training-related pain</li>
-          <li>Return-to-sport rehabilitation</li>
-          <li>Recurrent injuries and movement problems</li>
-        </ul>
-      </div>
+<div class="condition">
+
+<h3>
+Back, pelvis & sciatica
+</h3>
+
+<ul>
+
+<li>
+Acute and persistent low back pain
+</li>
+
+<li>
+Sciatica and lumbar nerve-root irritation / impingement
+</li>
+
+<li>
+Disc-related back and leg pain
+</li>
+
+<li>
+Lumbar spondylosis and degenerative change
+</li>
+
+<li>
+Facet-joint related pain and stiffness
+</li>
+
+<li>
+Sacroiliac and pelvic-region pain
+</li>
+
+<li>
+Spinal stenosis and activity-related leg symptoms
+</li>
+
+</ul>
+
+</div>
 
 
-      <div class="condition">
-        <h3>Persistent & complex MSK problems</h3>
-        <ul>
-          <li>Persistent or recurrent musculoskeletal pain</li>
-          <li>Symptoms involving more than one region</li>
-          <li>Unclear diagnosis or conflicting previous advice</li>
-          <li>Review following scans or previous treatment</li>
-          <li>Advice regarding imaging</li>
-          <li>Onward specialist assessment where appropriate</li>
-        </ul>
-      </div>
+<div class="condition">
 
-    </div>
+<h3>
+Neck, upper back & nerve pain
+</h3>
 
-  </div>
+<ul>
+
+<li>
+Neck pain and cervical spondylosis
+</li>
+
+<li>
+Neck and arm pain
+</li>
+
+<li>
+Cervical nerve-root irritation / impingement
+</li>
+
+<li>
+Disc-related neck and arm symptoms
+</li>
+
+<li>
+Upper-back and thoracic pain
+</li>
+
+<li>
+Persistent neck stiffness
+</li>
+
+<li>
+Recurrent neck pain
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="condition">
+
+<h3>
+Shoulder
+</h3>
+
+<ul>
+
+<li>
+Rotator cuff related shoulder pain
+</li>
+
+<li>
+Rotator cuff tendinopathy
+</li>
+
+<li>
+Partial rotator cuff tears
+</li>
+
+<li>
+Frozen shoulder / adhesive capsulitis
+</li>
+
+<li>
+Subacromial pain and bursitis
+</li>
+
+<li>
+Shoulder instability and recurrent subluxation
+</li>
+
+<li>
+AC joint pain and osteoarthritis
+</li>
+
+<li>
+Glenohumeral osteoarthritis
+</li>
+
+<li>
+Sports and traumatic shoulder injuries
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="condition">
+
+<h3>
+Elbow, forearm, wrist & hand
+</h3>
+
+<ul>
+
+<li>
+Tennis elbow / lateral elbow tendinopathy
+</li>
+
+<li>
+Golfer's elbow / medial elbow tendinopathy
+</li>
+
+<li>
+Cubital tunnel / ulnar nerve irritation
+</li>
+
+<li>
+Carpal tunnel and nerve-related hand symptoms
+</li>
+
+<li>
+Wrist sprain, instability and overuse pain
+</li>
+
+<li>
+Thumb and hand osteoarthritis
+</li>
+
+<li>
+Tendon and soft-tissue injuries
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="condition">
+
+<h3>
+Hip & groin
+</h3>
+
+<ul>
+
+<li>
+Hip osteoarthritis and stiffness
+</li>
+
+<li>
+Greater trochanteric pain syndrome
+</li>
+
+<li>
+Gluteal tendinopathy
+</li>
+
+<li>
+Hip impingement / FAI-related symptoms
+</li>
+
+<li>
+Groin and adductor-related pain
+</li>
+
+<li>
+Proximal hamstring tendinopathy
+</li>
+
+<li>
+Activity and sport-related hip pain
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="condition">
+
+<h3>
+Knee
+</h3>
+
+<ul>
+
+<li>
+Knee osteoarthritis
+</li>
+
+<li>
+Patellofemoral / anterior knee pain
+</li>
+
+<li>
+Patellar and quadriceps tendinopathy
+</li>
+
+<li>
+Degenerative meniscal symptoms
+</li>
+
+<li>
+Ligament sprains and rehabilitation
+</li>
+
+<li>
+Post-operative knee rehabilitation
+</li>
+
+<li>
+Running and sport-related knee pain
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="condition">
+
+<h3>
+Foot & ankle
+</h3>
+
+<ul>
+
+<li>
+Achilles tendinopathy
+</li>
+
+<li>
+Plantar heel pain / plantar fasciopathy
+</li>
+
+<li>
+Ankle sprains and instability
+</li>
+
+<li>
+Calf and lower-leg muscle injuries
+</li>
+
+<li>
+Peroneal and other tendon problems
+</li>
+
+<li>
+Foot and ankle osteoarthritis
+</li>
+
+<li>
+Return-to-running rehabilitation
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="condition">
+
+<h3>
+Tendons, muscles & sports injuries
+</h3>
+
+<ul>
+
+<li>
+Tendinopathy and tendon overload
+</li>
+
+<li>
+Muscle strains and tears
+</li>
+
+<li>
+Ligament sprains
+</li>
+
+<li>
+Overuse and training-related pain
+</li>
+
+<li>
+Return-to-sport rehabilitation
+</li>
+
+<li>
+Recurrent injuries and movement problems
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="condition">
+
+<h3>
+Persistent & complex MSK problems
+</h3>
+
+<ul>
+
+<li>
+Persistent or recurrent musculoskeletal pain
+</li>
+
+<li>
+Symptoms involving more than one region
+</li>
+
+<li>
+Unclear diagnosis or conflicting previous advice
+</li>
+
+<li>
+Review following scans or previous treatment
+</li>
+
+<li>
+Advice regarding imaging
+</li>
+
+<li>
+Onward specialist assessment where appropriate
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<section id="treatment" class="soft">
-  <div class="wrap treatment-grid">
+<!-- TREATMENT -->
 
-    <div class="treatment-photo">
-      <img
-        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1100&q=88"
-        alt="Professional healthcare assessment">
-    </div>
+<section
+id="treatment"
+class="soft">
 
-    <div class="treatment-copy">
+<div class="wrap treatment-grid">
 
-      <span class="kicker">Assessment & treatment</span>
 
-      <h2>
-        Hands-on assessment. Individual treatment.
-      </h2>
+<div class="treatment-image">
 
-      <p>
-        Your appointment includes a detailed clinical history and a
-        <strong>hands-on physical assessment</strong> of movement, joints,
-        muscles, tendons, strength and relevant neurological function.
-      </p>
+<img
+src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=82"
+alt="Hands-on physiotherapy assessment and treatment">
 
-      <p>
-        Treatment is tailored to the clinical findings and may include
-        <strong>hands-on treatment and manual therapy</strong> where appropriate,
-        alongside targeted exercise, rehabilitation, load-management advice and
-        education.
-      </p>
+</div>
 
-      <p>
-        The aim is not simply to treat the painful area, but to establish what
-        is most likely driving your symptoms, explain the findings clearly and
-        agree a practical plan to help you move with greater confidence.
-      </p>
 
-      <div class="feature-row">
-        <div class="feature">Hands-on physical assessment</div>
-        <div class="feature">Manual therapy where appropriate</div>
-        <div class="feature">Individual rehabilitation</div>
-        <div class="feature">Clear diagnosis & explanation</div>
-      </div>
+<div>
 
-    </div>
+<span class="kicker">
+Assessment & treatment
+</span>
 
-  </div>
+<h2>
+Hands-on assessment. Individual treatment.
+</h2>
+
+
+<p class="muted">
+
+Your appointment includes a detailed clinical history and a
+<strong>
+hands-on physical assessment
+</strong>
+of movement, joints, muscles, tendons, strength and relevant
+neurological function.
+
+</p>
+
+
+<p class="muted">
+
+Treatment is tailored to the clinical findings and may include
+
+<strong>
+hands-on treatment and manual therapy
+</strong>
+
+where appropriate, alongside targeted exercise,
+rehabilitation, load-management advice and education.
+
+</p>
+
+
+<p class="muted">
+
+The aim is not simply to treat the painful area.
+
+The assessment is designed to establish what is driving your symptoms
+as clearly as possible, explain the findings and agree a practical
+plan to help you move with greater confidence.
+
+</p>
+
+
+<div class="features">
+
+<div class="feature">
+Hands-on physical assessment
+</div>
+
+<div class="feature">
+Manual therapy where appropriate
+</div>
+
+<div class="feature">
+Individual rehabilitation
+</div>
+
+<div class="feature">
+Clear diagnosis & explanation
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
+
+<!-- ABOUT REBOUND -->
 
 <section id="about">
-  <div class="wrap two">
 
-    <div>
-      <span class="kicker">About Rebound</span>
+<div class="wrap two">
 
-      <h2>
-        Experienced, evidence-based physiotherapy.
-      </h2>
 
-      <p>
-        Rebound is a local private physiotherapy clinic specialising in
-        musculoskeletal care.
-      </p>
+<div>
 
-      <p>
-        The emphasis is on careful assessment, a clear explanation of the
-        likely diagnosis, and a treatment plan that is proportionate, practical
-        and evidence-informed.
-      </p>
+<span class="kicker">
+About Rebound
+</span>
 
-      <p>
-        Where appropriate, your appointment may include rehabilitation advice,
-        exercise progression, education about your condition and discussion of
-        whether further investigation or specialist review may be useful.
-      </p>
-    </div>
+<h2>
+Experienced, evidence-based physiotherapy.
+</h2>
 
-    <div>
-      <h3>What to expect</h3>
 
-      <ul class="check-list">
-        <li>Specialist musculoskeletal assessment</li>
-        <li>Hands-on examination and treatment where appropriate</li>
-        <li>Clear explanation of findings and diagnosis</li>
-        <li>Individual treatment and rehabilitation planning</li>
-        <li>Evidence-based advice</li>
-        <li>Guidance regarding imaging or specialist assessment when required</li>
-      </ul>
-    </div>
+<p>
 
-  </div>
+Rebound is a local private physiotherapy clinic specialising in
+musculoskeletal care.
+
+</p>
+
+
+<p>
+
+The emphasis is on careful assessment, a clear explanation of the
+clinical diagnosis, and a treatment plan that is proportionate,
+practical and evidence-informed.
+
+</p>
+
+
+<p>
+
+Where appropriate, your appointment may include rehabilitation advice,
+exercise progression, education about your condition and discussion of
+whether further investigation or specialist review may be useful.
+
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+What to expect
+</h3>
+
+
+<ul class="check-list">
+
+<li>
+Specialist musculoskeletal assessment
+</li>
+
+<li>
+Hands-on examination and treatment where appropriate
+</li>
+
+<li>
+Clear explanation of findings and diagnosis
+</li>
+
+<li>
+Individual treatment and rehabilitation planning
+</li>
+
+<li>
+Evidence-based advice
+</li>
+
+<li>
+Guidance regarding imaging or specialist assessment when required
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
 </section>
 
 
-<section id="about-me" class="soft">
-  <div class="wrap two">
+<!-- ABOUT ME -->
 
-    <div>
+<section
+id="about-me"
+class="soft">
 
-      <span class="kicker">About me</span>
-
-      <h2>
-        Nick Harris MSc, BSc (Hons), MCSP, HCPC
-      </h2>
-
-      <p class="lead" style="font-size:1.05rem">
-        Advanced Physiotherapy Practitioner
-      </p>
-
-      <div class="qualifications">
-
-        <div class="qualification">
-          <strong>BSc (Hons) Physiotherapy</strong>
-        </div>
-
-        <div class="qualification">
-          <strong>
-            Master's Degree (MSc) in Neuro-musculoskeletal Physiotherapy
-          </strong>
-        </div>
-
-        <div class="qualification">
-          HCPC Registered Physiotherapist
-        </div>
-
-        <div class="qualification">
-          Member of the Chartered Society of Physiotherapy (MCSP)
-        </div>
-
-      </div>
-
-    </div>
+<div class="wrap two">
 
 
-    <div class="about-copy">
+<div>
 
-      <p>
-        I am an experienced musculoskeletal physiotherapist with nearly
-        <strong>20 years of clinical experience</strong> and almost
-        <strong>10 years working in advanced physiotherapy practice</strong>.
-      </p>
+<span class="kicker">
+About me
+</span>
 
-      <p>
-        I initially qualified with a
-        <strong>BSc (Hons) degree in Physiotherapy</strong> and subsequently
-        undertook further postgraduate study, completing a
-        <strong>
-          Master's Degree (MSc) in Neuro-musculoskeletal Physiotherapy
-        </strong>.
-      </p>
 
-      <p>
-        This advanced training has supported my development in the assessment,
-        diagnosis and management of more complex musculoskeletal conditions.
-      </p>
+<h2>
+Nick Harris MSc, BSc (Hons), MCSP, HCPC
+</h2>
 
-      <p>
-        Alongside Rebound, I continue to work within the NHS as an
-        <strong>Advanced Physiotherapy Practitioner and First Contact Practitioner</strong>,
-        assessing and managing a wide range of musculoskeletal conditions.
-      </p>
 
-      <p>
-        My particular clinical interests include spinal conditions,
-        shoulder and upper-limb problems, and hip, knee and lower-limb
-        conditions.
-      </p>
+<p
+class="lead"
+style="font-size:1.05rem">
 
-      <h3 style="margin-top:26px">Outside the clinic</h3>
+Advanced Physiotherapy Practitioner
 
-      <p>
-        Outside physiotherapy, I enjoy keeping active through
-        <strong>golf, football and general fitness</strong>.
-        I also play <strong>guitar in a band</strong>.
-      </p>
+</p>
 
-      <p>
-        I also volunteer as part of the medical team at
-        <strong>Glastonbury Festival</strong>, working in the festival medical
-        facilities and helping to assess and manage
-        <strong>acute injuries and trauma</strong>.
-      </p>
 
-      <p>
-        My aim with Rebound is simple: to provide experienced,
-        evidence-based musculoskeletal physiotherapy locally, with enough time
-        to properly assess the problem, explain what is happening and agree a
-        sensible plan for moving forward.
-      </p>
+<div class="qualifications">
 
-    </div>
 
-  </div>
+<div class="qualification">
+
+<strong>
+BSc (Hons) Physiotherapy
+</strong>
+
+</div>
+
+
+<div class="qualification">
+
+<strong>
+Master's Degree (MSc) in Neuro-musculoskeletal Physiotherapy
+</strong>
+
+</div>
+
+
+<div class="qualification">
+
+HCPC Registered Physiotherapist
+
+</div>
+
+
+<div class="qualification">
+
+Member of the Chartered Society of Physiotherapy (MCSP)
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="about-copy">
+
+
+<p>
+
+I am an experienced musculoskeletal physiotherapist with nearly
+
+<strong>
+20 years of clinical experience
+</strong>
+
+and almost
+
+<strong>
+10 years working in advanced physiotherapy practice
+</strong>.
+
+</p>
+
+
+<p>
+
+I initially qualified with a
+
+<strong>
+BSc (Hons) degree in Physiotherapy
+</strong>
+
+and subsequently undertook further postgraduate study, completing a
+
+<strong>
+Master's Degree (MSc) in Neuro-musculoskeletal Physiotherapy
+</strong>.
+
+</p>
+
+
+<p>
+
+This advanced training has supported my development in the assessment,
+diagnosis and management of more complex musculoskeletal conditions.
+
+</p>
+
+
+<p>
+
+Alongside Rebound, I continue to work within the NHS as an
+
+<strong>
+Advanced Physiotherapy Practitioner and First Contact Practitioner
+</strong>,
+
+assessing and managing a wide range of musculoskeletal conditions.
+
+</p>
+
+
+<p>
+
+My particular clinical interests include spinal conditions,
+shoulder and upper-limb problems, and hip, knee and lower-limb
+conditions.
+
+</p>
+
+
+<p>
+
+My approach is centred around careful assessment and diagnosis,
+explaining findings clearly, and helping patients understand the most
+appropriate treatment and rehabilitation options available to them.
+
+</p>
+
+
+<h3 style="margin-top:27px">
+Outside the clinic
+</h3>
+
+
+<p>
+
+Outside physiotherapy, I enjoy keeping active through
+
+<strong>
+golf, football and general fitness
+</strong>.
+
+I also play
+
+<strong>
+guitar in a band
+</strong>.
+
+</p>
+
+
+<p>
+
+I also volunteer as part of the medical team at
+
+<strong>
+Glastonbury Festival
+</strong>,
+
+working in the festival medical facilities and helping to assess and
+manage
+
+<strong>
+acute injuries and trauma
+</strong>.
+
+</p>
+
+
+<p>
+
+My aim with Rebound is simple: to provide experienced,
+evidence-based musculoskeletal physiotherapy locally, with enough
+time to properly assess the problem, explain what is happening and
+agree a sensible plan for moving forward.
+
+</p>
+
+</div>
+
+</div>
+
 </section>
 
+
+<!-- FEES -->
 
 <section id="fees">
-  <div class="wrap">
 
-    <span class="kicker">Fees & appointments</span>
+<div class="wrap">
 
-    <h2 style="text-align:center">
-      Simple, transparent pricing.
-    </h2>
+<span class="kicker">
+Fees & appointments
+</span>
 
-    <div class="fee-card">
 
-      <div class="fee-top">
+<h2 style="text-align:center">
+Simple, transparent pricing.
+</h2>
 
-        <div>
-          <div class="fee-name">
-            Consultation & Treatment
-          </div>
 
-          <div style="color:var(--muted);margin-top:4px">
-            Assessment and treatment of one musculoskeletal condition.
-          </div>
-        </div>
+<div class="fee-card">
 
-        <div class="fee-price">
-          £60
-        </div>
 
-      </div>
+<div class="fee-top">
 
-      <p>
-        <strong>Initial and follow-up appointments are £60.</strong>
-        Your appointment may include hands-on assessment and treatment,
-        clinical explanation, rehabilitation advice and an individual exercise
-        programme where appropriate.
-      </p>
+<div>
 
-      <p>
-        Appointments are focused on one main musculoskeletal problem so that
-        sufficient time can be given to a thorough assessment, clear diagnosis
-        and appropriate treatment plan.
-      </p>
+<div class="fee-title">
+Consultation & Treatment
+</div>
 
-      <div class="hero-actions">
-        <a class="btn" href="tel:07593929738">
-          Call to arrange an appointment
-        </a>
+<div class="small">
 
-        <a class="btn light"
-           href="mailto:reboundadvancedphysio@outlook.com">
-          Email Rebound
-        </a>
-      </div>
+Assessment and treatment of one musculoskeletal condition.
 
-    </div>
+</div>
 
-  </div>
+</div>
+
+
+<div class="price">
+£60
+</div>
+
+</div>
+
+
+<p class="muted">
+
+<strong>
+Initial and follow-up appointments are £60.
+</strong>
+
+Your appointment may include hands-on assessment and treatment,
+clinical explanation, rehabilitation advice and an individual
+exercise programme where appropriate.
+
+</p>
+
+
+<p class="muted">
+
+Appointments are focused on one main musculoskeletal problem so that
+sufficient time can be given to a thorough assessment, clear
+diagnosis and appropriate treatment plan.
+
+</p>
+
+
+<div class="hero-actions">
+
+<a
+class="btn"
+href="tel:07593929738">
+
+Call to arrange an appointment
+
+</a>
+
+
+<a
+class="btn light"
+href="mailto:reboundadvancedphysio@outlook.com">
+
+Email Rebound
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<section id="location" class="soft">
-  <div class="wrap two">
+<!-- LOCATION -->
 
-    <div class="location-card">
+<section
+id="location"
+class="soft">
 
-      <span class="kicker">Location</span>
-
-      <h2>
-        Conveniently based in Felpham.
-      </h2>
-
-      <p>
-        Appointments take place in consulting rooms
-        <strong>upstairs at Flansham Park GP Practice</strong>,
-        serving Felpham, Bognor Regis and the surrounding area.
-      </p>
-
-      <p>
-        Rebound Advanced Physiotherapy Clinic is an
-        <strong>independent private enterprise</strong>.
-        The consulting rooms are located within Flansham Park GP Practice,
-        but Rebound is not part of, affiliated with or endorsed by the GP
-        practice or its NHS services.
-      </p>
-
-      <a class="map-link"
-         target="_blank"
-         rel="noopener"
-         href="https://www.google.com/maps/search/?api=1&query=Flansham+Park+GP+Practice+Felpham+Bognor+Regis">
-        View location on Google Maps →
-      </a>
-
-    </div>
+<div class="wrap two">
 
 
-    <div class="contact-card">
+<div class="location-card">
 
-      <h3>Contact Rebound</h3>
+<span class="kicker">
+Location
+</span>
 
-      <p>
-        <strong>Telephone</strong><br>
-        <a href="tel:07593929738">
-          07593 929738
-        </a>
-      </p>
+<h2>
+Conveniently based in Felpham.
+</h2>
 
-      <p>
-        <strong>Email</strong><br>
-        <a href="mailto:reboundadvancedphysio@outlook.com">
-          reboundadvancedphysio@outlook.com
-        </a>
-      </p>
 
-      <p>
-        <strong>Clinic</strong><br>
-        Upstairs at Flansham Park GP Practice<br>
-        Felpham, Bognor Regis
-      </p>
+<p>
 
-      <div class="hero-actions">
-        <a class="btn light" href="tel:07593929738">
-          Call now
-        </a>
-      </div>
+Appointments take place in consulting rooms
 
-    </div>
+<strong>
+upstairs at Flansham Park GP Practice
+</strong>,
 
-  </div>
+serving Felpham, Bognor Regis and the surrounding area.
+
+</p>
+
+
+<p>
+
+Rebound Advanced Physiotherapy Clinic is an
+
+<strong>
+independent private enterprise
+</strong>.
+
+The consulting rooms are located within Flansham Park GP Practice,
+but Rebound is not part of, affiliated with or endorsed by the GP
+practice or its NHS services.
+
+</p>
+
+
+<a
+class="map-link"
+target="_blank"
+rel="noopener"
+href="https://www.google.com/maps/search/?api=1&query=Flansham+Park+GP+Practice+Felpham+Bognor+Regis">
+
+View location on Google Maps →
+
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+
+<h3>
+Contact Rebound
+</h3>
+
+
+<p>
+
+<strong>
+Telephone
+</strong>
+
+<br>
+
+<a href="tel:07593929738">
+
+07593 929738
+
+</a>
+
+</p>
+
+
+<p>
+
+<strong>
+Email
+</strong>
+
+<br>
+
+<a href="mailto:reboundadvancedphysio@outlook.com">
+
+reboundadvancedphysio@outlook.com
+
+</a>
+
+</p>
+
+
+<p>
+
+<strong>
+Clinic
+</strong>
+
+<br>
+
+Upstairs at Flansham Park GP Practice
+
+<br>
+
+Felpham, Bognor Regis
+
+</p>
+
+
+<div class="hero-actions">
+
+<a
+class="btn light"
+href="tel:07593929738">
+
+Call now
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
+
+<!-- PRIVACY -->
 
 <section id="privacy">
-  <div class="wrap">
 
-    <span class="kicker">
-      Privacy & professional information
-    </span>
-
-    <h2>
-      Clear information about your care and your data.
-    </h2>
-
-    <div class="governance-grid">
-
-      <div class="governance-box">
-
-        <h3>Privacy notice</h3>
-
-        <p>
-          Rebound Advanced Physiotherapy Clinic is the data controller for
-          personal information provided directly to the clinic.
-        </p>
-
-        <p>
-          This may include your name and contact details, appointment
-          information and, when you become a patient, relevant health and
-          clinical information required to provide physiotherapy care.
-        </p>
-
-        <p>
-          Information may be used to respond to enquiries, arrange and manage
-          appointments, provide and document physiotherapy care, communicate
-          with other healthcare professionals where appropriate and meet
-          professional or legal obligations.
-        </p>
-
-        <p>
-          Personal information is only shared where there is an appropriate
-          reason to do so, for example with another healthcare professional
-          involved in your care, where you have asked or agreed for information
-          to be shared, or where disclosure is required or permitted by law.
-        </p>
-
-        <p>
-          Questions concerning your information can be sent to
-          <a href="mailto:reboundadvancedphysio@outlook.com">
-            <strong>reboundadvancedphysio@outlook.com</strong>
-          </a>.
-        </p>
-
-        <p style="font-size:.9rem">
-          This website currently has no patient contact form, online booking
-          system, payment facility, advertising tracker or website analytics
-          installed.
-        </p>
-
-      </div>
+<div class="wrap">
 
 
-      <div class="governance-box">
+<span class="kicker">
+Privacy & professional information
+</span>
 
-        <h3>Professional & website information</h3>
 
-        <p>
-          Nick Harris is an
-          <strong>HCPC registered physiotherapist</strong> and a member of the
-          <strong>Chartered Society of Physiotherapy (MCSP)</strong>.
-        </p>
+<h2>
+Clear information about your care and your data.
+</h2>
 
-        <p>
-          Information on this website is intended as general information about
-          Rebound Advanced Physiotherapy Clinic and the types of
-          musculoskeletal problems commonly assessed and treated.
-        </p>
 
-        <p>
-          It is not a diagnosis, individual medical advice or a substitute for
-          an appropriate clinical assessment.
-        </p>
+<div class="governance">
 
-        <p>
-          If you develop severe, rapidly worsening or otherwise concerning
-          symptoms, seek appropriate medical assessment rather than relying on
-          information contained on this website.
-        </p>
 
-        <p>
-          Rebound Advanced Physiotherapy Clinic is an independent private
-          enterprise and is not part of, affiliated with or endorsed by
-          Flansham Park GP Practice or its NHS services.
-        </p>
+<div class="governance-card">
 
-      </div>
 
-    </div>
+<h3>
+Privacy notice
+</h3>
 
-  </div>
+
+<p>
+
+Rebound Advanced Physiotherapy Clinic is the data controller for
+personal information provided directly to the clinic.
+
+</p>
+
+
+<p>
+
+This may include your name and contact details, appointment
+information and, when you become a patient, relevant health and
+clinical information required to provide physiotherapy care.
+
+</p>
+
+
+<p>
+
+Information may be used to respond to enquiries, arrange and manage
+appointments, provide and document physiotherapy care, communicate
+with other healthcare professionals where appropriate and meet
+professional or legal obligations.
+
+</p>
+
+
+<p>
+
+Personal information is only shared where there is an appropriate
+reason to do so, for example with another healthcare professional
+involved in your care, where you have asked or agreed for information
+to be shared, or where disclosure is required or permitted by law.
+
+</p>
+
+
+<p>
+
+Questions concerning your information can be sent to
+
+<a href="mailto:reboundadvancedphysio@outlook.com">
+
+<strong>
+reboundadvancedphysio@outlook.com
+</strong>
+
+</a>.
+
+</p>
+
+
+<p class="small">
+
+This website currently has no patient contact form,
+online booking system, payment facility,
+advertising tracker or website analytics installed.
+
+</p>
+
+</div>
+
+
+<div class="governance-card">
+
+
+<h3>
+Professional & website information
+</h3>
+
+
+<p>
+
+Nick Harris is an
+
+<strong>
+HCPC registered physiotherapist
+</strong>
+
+and a member of the
+
+<strong>
+Chartered Society of Physiotherapy (MCSP)
+</strong>.
+
+</p>
+
+
+<p>
+
+Information on this website is intended as general information about
+Rebound Advanced Physiotherapy Clinic and the types of
+musculoskeletal problems commonly assessed and treated.
+
+</p>
+
+
+<p>
+
+It is not a diagnosis, individual medical advice or a substitute for
+an appropriate clinical assessment.
+
+</p>
+
+
+<p>
+
+If you develop severe, rapidly worsening or otherwise concerning
+symptoms, seek appropriate medical assessment rather than relying on
+information contained on this website.
+
+</p>
+
+
+<p>
+
+Rebound Advanced Physiotherapy Clinic is an independent private
+enterprise and is not part of, affiliated with or endorsed by
+Flansham Park GP Practice or its NHS services.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
+
 
 </main>
 
 
 <footer>
-  <div class="wrap footer-grid">
 
-    <div>
-      <strong>
-        Rebound Advanced Physiotherapy Clinic
-      </strong>
+<div class="wrap footer">
 
-      <div class="footer-muted">
-        Helping you move with confidence.
-      </div>
 
-      <div class="footer-links">
-        <a href="#privacy">Privacy</a>
-        <a href="#about-me">Professional information</a>
-        <a href="#location">Location & contact</a>
-      </div>
+<div>
 
-      <p class="footer-muted">
-        Independent private musculoskeletal physiotherapy in Felpham,
-        Bognor Regis.
-      </p>
-    </div>
+<strong>
 
-    <div class="footer-muted">
-      07593 929738<br>
-      reboundadvancedphysio@outlook.com
-    </div>
+Rebound Advanced Physiotherapy Clinic
 
-  </div>
+</strong>
+
+
+<div class="footer-muted">
+
+Helping you move with confidence.
+
+</div>
+
+
+<div class="footer-links">
+
+<a href="#privacy">
+Privacy
+</a>
+
+<a href="#about-me">
+Professional information
+</a>
+
+<a href="#location">
+Location & contact
+</a>
+
+</div>
+
+
+<p class="footer-muted">
+
+Independent private musculoskeletal physiotherapy in Felpham,
+Bognor Regis.
+
+</p>
+
+</div>
+
+
+<div class="footer-muted">
+
+07593 929738
+
+<br>
+
+reboundadvancedphysio@outlook.com
+
+</div>
+
+</div>
+
 </footer>
+
 
 </body>
 
+</html
